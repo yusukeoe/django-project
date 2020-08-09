@@ -1,5 +1,31 @@
 {% extends 'diary/base.html' %}
 
 {% block content %}
-<h1>It's a diary application!</h1>
+<h1>日記一覧</h1>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Text</th>
+            <th>日付</th>
+            <th>Modifier</th>
+            <th>Suppirimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for day in day_list %}
+        <tr>
+            <td><a href='{% url 'diary:detail' day.pk %}'>{{ day.title }}</a></td>
+            <td >{{ day.text }}</td>
+            <td>{{ day.date }}</td>
+            <td><a href="{% url 'diary:update' day.pk %}">✏️</a></td>
+            <td><a href="{% url 'diary:delete' day.pk %}">🗑</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% include 'diary/page3.html' %}
+
 {% endblock %}
