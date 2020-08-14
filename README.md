@@ -1,2 +1,2 @@
 # django-project
-help me
+リードミー、ヘルプミー
