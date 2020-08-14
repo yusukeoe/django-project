@@ -1,2 +1,2 @@
 # django-project
-リードミーに何書けばいいのかわからん。。
+help me
